@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebSite.Models.Device>
+<input type="button" value="Обновить страницу" onClick="location.href=location.href">
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Имя диска</th>
+        <th>Свободное место</th>
+        <th>Время считывания</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(Device => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(Device => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(Device => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(Device => item.ExecutionDate)
+            </td>
+        </tr>
+    }
+</table>
